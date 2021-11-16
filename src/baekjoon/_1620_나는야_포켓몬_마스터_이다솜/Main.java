@@ -1,4 +1,4 @@
-package baekjoon.나는야_포켓몬_마스터_이다솜;
+package baekjoon._1620_나는야_포켓몬_마스터_이다솜;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+//https://www.acmicpc.net/problem/1620
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

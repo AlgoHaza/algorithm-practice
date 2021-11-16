@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-//https://www.acmicpc.net/submit/9375
+//https://www.acmicpc.net/problem/9375
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
