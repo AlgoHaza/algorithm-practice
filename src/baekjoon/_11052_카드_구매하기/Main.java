@@ -3,27 +3,33 @@ package baekjoon._11052_카드_구매하기;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
-import java.util.AbstractMap.SimpleEntry;
+import java.util.Arrays;
 
-import java.util.Scanner;
-
-
+//축약적으로 설명하면 브루트 포싱 기법을 사용하여 값들을 구하되, 그 값들을 구하는 동시에 서로 비교해서 최대값만 저장하는거다
+                /*
+                내가 이해한 Dynamic Programming 의 개념은 분할과 병합이다. 해당 예제에서는 가능태를 기반으로 분할한 뒤, 최대값을 기준으로 병합하였다.
+                 */
 public class Main {
-    public static void main(String[] args)   {
-        Scanner sc = new Scanner(System.in);
-        int n =sc.nextInt();
-        int[] dp = new int[n+1];
-        int[] p = new int[n+1];
-        for(int i =1 ; i < n+1 ;i++) {
-            p[i] =sc.nextInt();
-        }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        /*
+        i : 구매해야하는 카드의 개수
+        j : 카드팩에 들어있는 카드의 개수
+         */
+        int[] dp = new int[n+1]; // dp[i] = 카드를 i개 구매하는데 드는 비용의 최대값
+        int[] p = Arrays.stream(br.readLine().split(" "))
+                .mapToInt(Integer::parseInt).toArray(); //p[j] = 카드가 j개 들어있는 카드팩의 가격
+        //카드가 j개가 있는 카드팩을 구매하면 다음에 구매해야하는 카드의 개수의 총합은 i-j 이어야한 다.
+        //따라서 dp[i] = dp[i-j] + p[j] 이다
+        // 해설 : i개의 카드를 구매하는데 드는 비용의 최대값 = i-j개의 카드를 구매하는데 드는 비용의 최대값 + 카드가 j개 들어있는 카드팩의 가격 가격
         for(int i =1 ; i < n+1;i++) {
             for(int j=1 ; j<=i;j++) {
-                dp[i] = Math.max(dp[i],p[j]+dp[i-j]);
+                dp[i] = Math.max(dp[i],p[j]+dp[i-j]); //기존에 구한 카드를 i개 구매하는데 드는 비용의 최대값과 새로 구한 카드를 i개 구매하는데 드는 비용의 최대값중 더 큰값을 dp[i] 에 저장한다
+                //즉, 현재까지 구한 dp[i] 는 이중 for문이 끝나기 전까지 "카드를 i개 구매하는데 드는 비용의 최대값" 가 될 수 있는 후보값이다
             }
         }
-        System.out.println(dp[n]);
+        System.out.println(dp[n]); //확정된 최대값을 출력한다
     }
 }
 /*
