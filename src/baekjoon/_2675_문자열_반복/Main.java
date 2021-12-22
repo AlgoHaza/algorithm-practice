@@ -12,7 +12,7 @@ public class Main {
         for (int x = 0; x < t; x++) {
             String[] data = br.readLine().split(" ");
             int iteration = Integer.parseInt(data[0]);
-            
+
             StringBuilder sb = new StringBuilder();
             for (char c : data[1].toCharArray())
                 sb.append(String.valueOf(c).repeat(Math.max(0, iteration)));
