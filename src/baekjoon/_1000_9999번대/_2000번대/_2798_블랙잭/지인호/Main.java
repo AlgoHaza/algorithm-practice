@@ -1,4 +1,4 @@
-package baekjoon._1000_9999번대._2000번대._2798_블랙잭;
+package baekjoon._1000_9999번대._2000번대._2798_블랙잭.지인호;
 
 import java.io.BufferedReader;
 import java.io.IOException;
