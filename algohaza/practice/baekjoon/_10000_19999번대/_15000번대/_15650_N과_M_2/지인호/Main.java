@@ -1,4 +1,4 @@
-package practice.baekjoon._10000_19999번대._15000번대._15650_N_과_M_2.지인호;
+package practice.baekjoon._10000_19999번대._15000번대._15650_N과_M_2.지인호;
 
 import java.util.ArrayList;
 import java.util.List;
