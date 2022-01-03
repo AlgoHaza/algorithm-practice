@@ -7,9 +7,8 @@ public class Main {
     private static int n, sum;
     public static void main(String[] args) {
         n = new Scanner(System.in).nextInt();
-        int[] prevX = new int[n], prevY = new int[n];
+        int[] prevX = new int[n];
         Arrays.fill(prevX, -1);
-        Arrays.fill(prevY, -1);
         bt(0, prevX);
         System.out.println(sum);
     }
