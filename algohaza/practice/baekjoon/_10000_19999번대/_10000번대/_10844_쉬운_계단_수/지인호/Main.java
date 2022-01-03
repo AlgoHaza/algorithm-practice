@@ -17,7 +17,7 @@ public class Main {
 
         int sum = 0;
         for (int i = 1; i < 10; i++) {
-            sum += f(1, i);
+            sum += f(1, i)% 10_0000_0000;
             sum %= 10_0000_0000;
         }
         System.out.println(sum);
@@ -30,6 +30,6 @@ public class Main {
             else if(x == 9) dp[y - 1][x] = f(y + 1, x - 1);
             else dp[y - 1][x] = f(y + 1, x - 1) + f(y + 1, x + 1);
         }
-        return dp[y-1][x] % 10_0000_0000;
+        return dp[y-1][x];
     }
 }
